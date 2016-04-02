@@ -1,0 +1,47 @@
+Data Products - Project Presentation
+========================================================
+author: M. Naushad
+date: April 3, 2016
+
+Electric Power Consumption
+========================================================
+
+This presentation has been created as part of coursera Data Products project assignment. 
+The purpose of this presentation is to help user navigate through the Power Consumption Shiny application.
+
+The link for Power Consumption application in shinyapps.io
+- https://mpnaushad.shinyapps.io/PowerConsumption/
+
+The link for application code in github
+- https://github.com/mpnaushad/DataProducts
+
+Application Feature
+========================================================
+
+Power Consumption application has following features which allows users to explore the data and analyze histogram plots based on selections.
+
+- Selection of variable from power consumption data for analysis and drawing plot
+- Selection of number of bins to be used in histogram from slide bar
+- Use of radio button from plot color selection
+- Main panel has tabs to provide users opportunity to explore data and visualize plot 
+
+Summary Data for Power Consumption
+========================================================
+
+```{r, echo=FALSE}
+data <- read.csv("household_power_consumption_20070101.txt", header=T, sep=';', na.strings="?", nrows=1440, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
+summary(data)
+```
+
+Histogram - Global Active Power
+========================================================
+
+```{r, echo=FALSE}
+
+hist(data$Global_active_power,
+     col="red",
+     main="Global Active Power",
+     xlab="Global Active Power (kilowatts)",
+     ylab="Frequency")
+
+```
